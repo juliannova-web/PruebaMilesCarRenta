@@ -1,0 +1,96 @@
+﻿@model IEnumerable<RestauranteTicket.Shared.Entities.User>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="row">
+    <div class="col-11 g-2">
+    </div>
+    <div class="col-1">
+        <a asp-action="Register" class="btn btn-primary btn-flex h-40px border-0 fw-bolder px-4 px-lg-6">Crear</a>
+    </div>
+
+</div>
+<div class="row">
+    <div class="table-responsive mt-2" style="padding-left:1%; padding-right:1%;">
+        <table id="MyTableUsers" class="display">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FullName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UserName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Direccion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Telefono)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tipo_Usuario)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Direccion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Telefono)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tipo_Usuario)
+                        </td>
+                        <td>
+                            <a class="btn btn-info btn-sm" asp-action="ChangePassword" asp-route-id="@item.Id">Cambiar Contraseña</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+
+    }
+
+    <script>
+        $(document).ready(function () {
+            var buttonCommon = {
+                exportOptions: {
+                    format: {
+                        body: function (data, row, column, node) {
+                            // Strip $ from salary column to make it numeric
+                            return data;
+                        }
+                    }
+                }
+            };
+
+            $('#MyTableUsers').DataTable({
+
+                aLengthMenu: [
+                    [10, 50, 100, 200, -1],
+                    [10, 50, 100, 200, "Todos"]
+                ]
+            });
+        });
+    </script>
+}
