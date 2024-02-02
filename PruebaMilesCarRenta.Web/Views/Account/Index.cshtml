@@ -33,6 +33,9 @@
                     <th>
                         @Html.DisplayNameFor(model => model.TypeUser)
                     </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.City)
+                    </th>
                     <th></th>
                 </tr>
             </thead>
@@ -54,6 +57,9 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.TypeUser)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.City)
                         </td>
                         <td>
                             <a class="btn btn-info btn-sm" asp-action="ChangePassword" asp-route-id="@item.Id">Cambiar Contraseña</a>

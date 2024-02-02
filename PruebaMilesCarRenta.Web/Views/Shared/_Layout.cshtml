@@ -34,28 +34,52 @@
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                         @if (User.Identity.IsAuthenticated)
                         {
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item">
 
-                            <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/lib/bootstrap/dist/images/tickets.png" alt="hugenerd" width="30" height="30" class="rounded">   Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Index"><img src="~/lib/bootstrap/dist/images/usuarios.png" alt="hugenerd" width="30" height="30" class="rounded"> Usuarios</a>
+                                </li>
 
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/lib/bootstrap/dist/images/tickets.png" alt="hugenerd" width="30" height="30" class="rounded">   Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Index"><img src="~/lib/bootstrap/dist/images/usuarios.png" alt="hugenerd" width="30" height="30" class="rounded"> Usuarios</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Sedes" asp-action="Index"><img src="~/lib/bootstrap/dist/images/sedes.png" alt="hugenerd" width="30" height="30" class="rounded">   Sedes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Estudiantes" asp-action="Index"><img src="~/lib/bootstrap/dist/images/estudiantes.png" alt="hugenerd" width="30" height="30" class="rounded">   Estudiantes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Acudientes" asp-action="List"><img src="~/lib/bootstrap/dist/images/acudientes.png" alt="hugenerd" width="30" height="30" class="rounded">   Acudientes</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Vehicles" asp-action="Index"><img src="~/lib/bootstrap/dist/images/sedes.png" alt="hugenerd" width="30" height="30" class="rounded">Vehiculos</a>
+                                </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Tickets" asp-action="Index"><img src="~/lib/bootstrap/dist/images/Consumos.png" alt="hugenerd" width="30" height="30" class="rounded">   Listado Consumo</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Bookings" asp-action="Index"><img src="~/lib/bootstrap/dist/images/Consumos.png" alt="hugenerd" width="30" height="30" class="rounded"> Reservas</a>
+                                </li>
 
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Bookings" asp-action="ListPaymentPT"><img src="~/lib/bootstrap/dist/images/Consumos.png" alt="hugenerd" width="30" height="30" class="rounded"> Pagos por Tarjeta</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Bookings" asp-action="ListPaymentPD"><img src="~/lib/bootstrap/dist/images/Consumos.png" alt="hugenerd" width="30" height="30" class="rounded"> Pagos en Destino</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Bookings" asp-action="ListPaymentMayorBogota"><img src="~/lib/bootstrap/dist/images/Consumos.png" alt="hugenerd" width="30" height="30" class="rounded">Identificacion Personas</a>
+                                </li>
+
+
+                               
+                            }
+                            @if (User.IsInRole("User"))
+                            {
+                  
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Vehicles" asp-action="VehiculeByUser"><img src="~/lib/bootstrap/dist/images/sedes.png" alt="hugenerd" width="30" height="30" class="rounded">Vehiculos</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Bookings" asp-action="Index"><img src="~/lib/bootstrap/dist/images/Consumos.png" alt="hugenerd" width="30" height="30" class="rounded"> Reservas</a>
+                                </li>
+
+                            }
+                           
 
                         }
 

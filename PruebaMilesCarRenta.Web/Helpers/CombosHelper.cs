@@ -90,7 +90,26 @@ namespace PruebaMilesCarRenta.Web.Helpers
             return list;
         }
 
-
-
+        public IEnumerable<SelectListItem> GetCombosTiposPagos()
+        {
+            List<SelectListItem> list = new List<SelectListItem>();
+            list.Insert(0, new SelectListItem
+            {
+                Text = "Seleccione tipo de pago",
+                Value = "0"
+            });
+            list.Insert(1, new SelectListItem
+            {
+                Text = "Destino",
+                Value = "PD"
+            });
+            list.Insert(2, new SelectListItem
+            {
+                Text = "Tarjera de crédito",
+                Value = "PT"
+            });
+           
+            return list;
+        }
     }
 }

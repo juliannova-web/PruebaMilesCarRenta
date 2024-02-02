@@ -18,9 +18,17 @@ namespace PruebaMilesCarRenta.Shared.Entities
         [Display(Name = "Vehiculo")]
         public Guid VehicleID { get; set; }
 
-        [Display(Name = "Reserva")]
+        [Display(Name = "Fecha Reserva")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        public DateTime Year { get; set; }
-            
+        public DateTime Date { get; set; }
+
+        [Display(Name = "Tipo de Pago")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
+        public string PaymentType { get; set; }
+
+        [Display(Name = "Tipo de Pago")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
+        public bool Status { get; set; }
+
     }
 }

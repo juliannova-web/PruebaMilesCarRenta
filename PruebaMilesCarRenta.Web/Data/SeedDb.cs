@@ -25,14 +25,14 @@ namespace PruebaMilesCarRenta.Web.Data
 
             if (!(await _context.VEHICLE.AnyAsync()))
             {
-                await CheckVehicleAsync("ABC111", "AUDI", "FX-205", 2021, 2000, 300000000, "carro1.png", true);
-                await CheckVehicleAsync("ABC112", "AUDI", "AX-206", 2012, 1800, 200000000, "carro2.png", true);
-                await CheckVehicleAsync("ABC113", "RENAULT", "BX-214", 2020, 1600, 30000000, "carro3.png", true);
-                await CheckVehicleAsync("ABC114", "AUDI", "CX-258", 2020, 1800, 80000000, "carro4.png", true);
-                await CheckVehicleAsync("ABC115", "RENAULT", "DX-214", 2015, 1600, 150000000, "carro5.png", true);
-                await CheckVehicleAsync("ABC116", "MAZDA", "EX-201", 2022, 1800, 90000000, "carro6.png", true);
-                await CheckVehicleAsync("ABC117", "MAZDA", "GX-200", 2015, 1800, 35000000, "carro7.png", true);
-                await CheckVehicleAsync("ABC118", "FERRARI", "HX-285", 2010, 2000, 100000000, "carro8.png", true);
+                await CheckVehicleAsync("ABC111", "AUDI", "FX-205", 2021, 2000, 100, "carro1.png", true);
+                await CheckVehicleAsync("ABC112", "AUDI", "AX-206", 2012, 1800, 180, "carro2.png", true);
+                await CheckVehicleAsync("ABC113", "RENAULT", "BX-214", 2020, 1600, 700, "carro3.png", true);
+                await CheckVehicleAsync("ABC114", "AUDI", "CX-258", 2020, 1800, 100, "carro4.png", true);
+                await CheckVehicleAsync("ABC115", "RENAULT", "DX-214", 2015, 1600, 180, "carro5.png", true);
+                await CheckVehicleAsync("ABC116", "MAZDA", "EX-201", 2022, 1800, 180, "carro6.png", true);
+                await CheckVehicleAsync("ABC117", "MAZDA", "GX-200", 2015, 1800, 200, "carro7.png", true);
+                await CheckVehicleAsync("ABC118", "FERRARI", "HX-285", 2010, 2000, 700, "carro8.png", true);
             }
         }
 

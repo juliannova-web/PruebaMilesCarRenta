@@ -24,7 +24,7 @@ namespace PruebaMilesCarRenta.Web.Controllers
             _context = context;
             _combosHelper = combosHelper;
         }
-
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             var usuariosDTO = await _context.Users.ToListAsync();

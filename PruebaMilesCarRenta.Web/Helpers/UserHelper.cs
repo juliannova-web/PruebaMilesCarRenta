@@ -47,6 +47,7 @@ namespace PruebaMilesCarRenta.Web.Helpers
 
         public async Task<User> GetUserAsync(string email)
         {
+  
             return await _context.Users
                 .FirstOrDefaultAsync(u => u.Email == email);
         }

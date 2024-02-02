@@ -7,5 +7,7 @@ namespace PruebaMilesCarRenta.Web.Helpers
         IEnumerable<SelectListItem> GetCombosTiposDocumento();
         IEnumerable<SelectListItem> GetCombosCiudades();
 
+        IEnumerable<SelectListItem> GetCombosTiposPagos();
+
     }
 }

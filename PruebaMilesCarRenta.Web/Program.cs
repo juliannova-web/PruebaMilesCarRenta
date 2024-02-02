@@ -31,6 +31,7 @@ builder.Services.AddTransient<SeedDb>();
 builder.Services.AddScoped<IUserHelper, UserHelper>();
 builder.Services.AddScoped<IVehicleHelper, VehicleHelper>();
 builder.Services.AddScoped<ICombosHelper, CombosHelper>();
+builder.Services.AddScoped<IBookingHelper, BookingHelper>();
 
 //builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

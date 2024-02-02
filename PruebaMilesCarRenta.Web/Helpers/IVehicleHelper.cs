@@ -6,7 +6,9 @@ namespace PruebaMilesCarRenta.Web.Helpers
     public interface IVehicleHelper
     {
         Task<IEnumerable<VehicleDTO>> GetVehicleAsync();
+        Task<IEnumerable<VehicleDTO>> GetVehicleAsync(Guid UserId);
 
-        Task<VehicleDTO> AddVehicleAsync(VehicleDTO vehicleDTO);
+		Task AddVehicleUserPreferencyAsync(Guid UserId, Vehicle vehicle);
+		Task<VehicleDTO> AddVehicleAsync(VehicleDTO vehicleDTO);
     }
 }

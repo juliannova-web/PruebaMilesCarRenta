@@ -1,0 +1,19 @@
+﻿@model IEnumerable<PruebaMilesCarRenta.Web.DTO.VehicleDTO>
+
+<div class="row mt-4">
+	@foreach (var vehicle in Model)
+	{
+		<div class="col-md-4 mb-4">
+			<div class="card">
+				<img src="@Url.Content("~/lib/bootstrap/dist/images/" + vehicle.NameImage)" style="width:300px; height:300px; border-radius:50px"   />
+				<div class="card-body">
+					<h5 class="card-title">@vehicle.Brand - @vehicle.Model</h5>
+					<p class="card-text">Año: @vehicle.Year</p>
+					<p class="card-text">Cilindraje: @vehicle.CylinderCapacity CC</p>
+					<p class="card-text">Precio: @String.Format("{0:C2}", vehicle.Price)</p>
+					<a class="btn btn-info btn-lg" asp-action="Details" asp-route-id="@vehicle.Id">Ver Detalles</a>
+				</div>
+			</div>
+		</div>
+	}
+</div>

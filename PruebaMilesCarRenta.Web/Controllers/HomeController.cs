@@ -17,7 +17,11 @@ namespace PruebaMilesCarRenta.Web.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Login", "Account");
+                if (User.IsInRole("Admin"))
+                {
+                    return RedirectToAction("Index", "Vehicles");
+                }
+                return RedirectToAction("VehiculeByUser", "Vehicles");
 
             }
             else

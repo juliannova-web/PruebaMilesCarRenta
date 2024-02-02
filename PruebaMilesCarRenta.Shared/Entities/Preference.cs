@@ -14,6 +14,7 @@ namespace PruebaMilesCarRenta.Shared.Entities
 
         [Display(Name = "Usuario")]
         public Guid UserID { get; set; }
+                
 
         [Display(Name = "Marca")]
         [MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]

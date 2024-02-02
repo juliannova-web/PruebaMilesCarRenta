@@ -1,0 +1,74 @@
+﻿@model IEnumerable<PruebaMilesCarRenta.Web.DTO.BookingDTO>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Brand)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Model)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Price)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Date)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.PaymentType)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Status)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Brand)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Model)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Price)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Date)
+				</td>
+
+				@if (item.PaymentType == "PT")
+				{
+					<td>
+						Pago Tarjeta
+					</td>
+				}
+				else
+				{
+					<td>
+						Pago Destino
+					</td>
+				}
+
+
+				<td>
+					@Html.DisplayFor(modelItem => item.Status)
+				</td>
+				<td>
+					<a class="btn btn-danger btn-sm" asp-action="Cancel" asp-route-id="@item.Id">Cancelar</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

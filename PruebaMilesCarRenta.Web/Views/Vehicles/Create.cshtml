@@ -4,63 +4,87 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>Vehicle</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-10 offset-1">
+        <h1 style="font-size: calc(1rem + 1.5vw);">Registar Usuario</h1>
+        <hr />
         <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="NumberPlate" class="control-label"></label>
-                <input asp-for="NumberPlate" class="form-control" />
-                <span asp-validation-for="NumberPlate" class="text-danger"></span>
-            </div>
-             <div class="form-group">
-                <label asp-for="Brand" class="control-label"></label>
-                <input asp-for="Brand" class="form-control" />
-                <span asp-validation-for="Brand" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Model" class="control-label"></label>
-                <input asp-for="Model" class="form-control" />
-                <span asp-validation-for="Model" class="text-danger"></span>
-            </div>
-            
-                <div class="form-group">
-                <label asp-for="Year" class="control-label"></label>
-                <input asp-for="Year" class="form-control" />
-                <span asp-validation-for="Year" class="text-danger"></span>
-            </div>
-            @*<div class="form-group">
-                <label asp-for="CylinderCapacity" class="control-label"></label>
-                <input asp-for="CylinderCapacity" class="form-control" />
-                <span asp-validation-for="CylinderCapacity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImageFile" class="control-label"></label>
-                <input asp-for="ImageFile" class="form-control" />
-                <span asp-validation-for="ImageFile" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Available" /> @Html.DisplayNameFor(model => model.Available)
-                </label>
-            </div> *@
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <input type="hidden" asp-for="Id" />
+            <div class="row">
+                <div class="col-md-5 offset-1">
+                    <div class="form-group">
+                        <span class="required">*</span>
+                        <label asp-for="NumberPlate" class="col-form-label"></label>
+                        <input asp-for="NumberPlate" class="form-control" />
+                        <span asp-validation-for="NumberPlate" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <span class="required">*</span>
+                        <label asp-for="Model" class="col-form-label"></label>
+                        <input asp-for="Model" class="form-control" />
+                        <span asp-validation-for="Model" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="required">*</span>
+                        <label asp-for="CylinderCapacity" class="col-form-label"></label>
+                        <input asp-for="CylinderCapacity" class="form-control" />
+                        <span asp-validation-for="CylinderCapacity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ImageFile" class="control-label"></label>
+                        <input asp-for="ImageFile" class="form-control" />
+                        <span asp-validation-for="ImageFile" class="text-danger"></span>
+                    </div>
+
+                 
+
+                </div>
+                <div class="col-md-5">
+
+                    <div class="form-group">
+                        <span class="required">*</span>
+                        <label asp-for="Brand" class="col-form-label"></label>
+                        <input asp-for="Brand" class="form-control" />
+                        <span asp-validation-for="Brand" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="required">*</span>
+                        <label asp-for="Year" class="col-form-label"></label>
+                        <input asp-for="Year" class="form-control" />
+                        <span asp-validation-for="Year" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="required">*</span>
+                        <label asp-for="Price" class="col-form-label"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group form-check mt-4" >
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Available" checked/> @Html.DisplayNameFor(model => model.Available)
+                        </label>
+                    </div>
+
+
+                </div>
+                <div class="form-group mt-2">
+
+                    <input type="submit" value="Registrar" class="btn btn-primary  col-md-2 offset-4" />
+                    <a class="btn btn-secondary col-md-2" asp-action="Index">Cancelar</a>
+
+
+
+
+                </div>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
