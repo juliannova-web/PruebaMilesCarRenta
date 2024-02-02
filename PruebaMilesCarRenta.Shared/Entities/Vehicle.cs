@@ -32,17 +32,16 @@ namespace PruebaMilesCarRenta.Shared.Entities
         public int CylinderCapacity { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:N2}")]
-        [Range(typeof(decimal), "0.01", "9999999999999999.99", ErrorMessage = "El valor debe estar entre 0.01 y 9999999999999999.99")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public decimal Price { get; set; }
 
         [Display(Name = "Foto")]
-        public Guid ImageId { get; set; }
+        public string? NameImage { get; set; }
 
         [Display(Name = "Foto")]
-        public string ImageFullPath => ImageId == Guid.Empty
-            ? $"https://localhost:7057/images/noimage.png"
-            : $"https://shoppingzulu.blob.core.windows.net/users/{ImageId}";
+        public string ImageFullPath => NameImage == string.Empty
+            ? $"~/images/noimage.png"
+            : $"~/images/{NameImage}";
 
         [Display(Name = "Disponible")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]

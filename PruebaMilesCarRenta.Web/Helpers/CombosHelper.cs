@@ -39,6 +39,57 @@ namespace PruebaMilesCarRenta.Web.Helpers
             return list;
         }
 
+        public IEnumerable<SelectListItem> GetCombosCiudades()
+        {
+            List<SelectListItem> list = new List<SelectListItem>();
+            list.Insert(0, new SelectListItem
+            {
+                Text = "Seleccione una ciudad",
+                Value = "0"
+            });
+            list.Insert(1, new SelectListItem
+            {
+                Text = "Bogotá",
+                Value = "Bogotá"
+            });
+            list.Insert(2, new SelectListItem
+            {
+                Text = "Medellín",
+                Value = "Medellín"
+            });
+            list.Insert(3, new SelectListItem
+            {
+                Text = "Cartagena",
+                Value = "Cartagena"
+            });
+            list.Insert(4, new SelectListItem
+            {
+                Text = "Cali",
+                Value = "Cali"
+            });           
+            list.Insert(5, new SelectListItem
+            {
+                Text = "Barranquilla",
+                Value = "Barranquilla"
+            });
+            list.Insert(6, new SelectListItem
+            {
+                Text = "Villavicencio",
+                Value = "Villavicencio"
+            });
+            list.Insert(7, new SelectListItem
+            {
+                Text = "Bucaramanga",
+                Value = "Bucaramanga"
+            });
+            list.Insert(8, new SelectListItem
+            {
+                Text = "Tunja",
+                Value = "Tunja"
+            });
+            return list;
+        }
+
 
 
     }

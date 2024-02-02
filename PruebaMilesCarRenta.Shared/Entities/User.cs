@@ -31,7 +31,7 @@ namespace PruebaMilesCarRenta.Shared.Entities
         public string Surname { get; set; }
 
         [Display(Name = "Ciudad")]
-        public City City { get; set; }
+        public string City { get; set; }
 
         [Display(Name = "Dirección")]
         [MaxLength(200, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
@@ -44,13 +44,12 @@ namespace PruebaMilesCarRenta.Shared.Entities
         public string YearOld { get; set; }
 
         [Display(Name = "Foto")]
-        public Guid ImageId { get; set; }
+        public Guid? ImageId { get; set; }
 
         [Display(Name = "Telefono")]
         [MaxLength(15, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string Phone { get; set; }
-
 
         [Display(Name = "Tipo de usuario")]
         public TypeUser TypeUser { get; set; }

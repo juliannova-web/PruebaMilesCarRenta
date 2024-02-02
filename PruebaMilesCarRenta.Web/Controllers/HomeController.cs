@@ -15,7 +15,15 @@ namespace PruebaMilesCarRenta.Web.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
         }
 
         public IActionResult Privacy()

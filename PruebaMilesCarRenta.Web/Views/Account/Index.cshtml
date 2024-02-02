@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RestauranteTicket.Shared.Entities.User>
+﻿@model IEnumerable<PruebaMilesCarRenta.Shared.Entities.User>
 
 @{
     ViewData["Title"] = "Index";
@@ -15,23 +15,23 @@
 </div>
 <div class="row">
     <div class="table-responsive mt-2" style="padding-left:1%; padding-right:1%;">
-        <table id="MyTableUsers" class="display">
+        <table id="MyTableUsers1" class="display">
             <thead>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.FullName)
+                        @Html.DisplayNameFor(model => model.Name)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.UserName)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Direccion)
+                        @Html.DisplayNameFor(model => model.Address)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Telefono)
+                        @Html.DisplayNameFor(model => model.Phone)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Tipo_Usuario)
+                        @Html.DisplayNameFor(model => model.TypeUser)
                     </th>
                     <th></th>
                 </tr>
@@ -41,19 +41,19 @@
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.FullName)
+                            @Html.DisplayFor(modelItem => item.Name)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.UserName)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Direccion)
+                            @Html.DisplayFor(modelItem => item.Address)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Telefono)
+                            @Html.DisplayFor(modelItem => item.Phone)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Tipo_Usuario)
+                            @Html.DisplayFor(modelItem => item.TypeUser)
                         </td>
                         <td>
                             <a class="btn btn-info btn-sm" asp-action="ChangePassword" asp-route-id="@item.Id">Cambiar Contraseña</a>
@@ -84,7 +84,7 @@
                 }
             };
 
-            $('#MyTableUsers').DataTable({
+            $('#MyTableUsers1').DataTable({
 
                 aLengthMenu: [
                     [10, 50, 100, 200, -1],

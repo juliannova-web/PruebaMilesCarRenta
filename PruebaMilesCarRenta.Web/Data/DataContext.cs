@@ -10,10 +10,11 @@ namespace PruebaMilesCarRenta.Web.Data
         {
 
         }
-
+        
         public DbSet<Vehicle> VEHICLE { get; set; }
         public DbSet<Preference> PREFRENCE { get; set; }
         public DbSet<Booking> BOOKING { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

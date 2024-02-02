@@ -13,7 +13,7 @@ namespace PruebaMilesCarRenta.Web.DTO
         [Display(Name = "Tipo de Identificacón")]
         public string TypeDocument { get; set; } = null!;
 
-        public IEnumerable<SelectListItem> TypesDocument { get; set; }
+        public IEnumerable<SelectListItem>? TypesDocument { get; set; }
 
         [Display(Name = "Documento")]
         [MaxLength(20, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
@@ -29,19 +29,12 @@ namespace PruebaMilesCarRenta.Web.DTO
         [MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string Surname { get; set; }
+        
 
-        [Display(Name = "Departmento / Estado")]
-        [Range(1, int.MaxValue, ErrorMessage = "Debes de seleccionar un Departamento / Estado.")]
-        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        public int StateId { get; set; }
+        [Display(Name = "Ciudad")]        
+        public string? CityId { get; set; }
 
-        public IEnumerable<SelectListItem> States { get; set; }
-
-        [Display(Name = "Ciuadad")]
-        [Range(1, int.MaxValue, ErrorMessage = "Debes de seleccionar una ciudad.")]
-        public int CityId { get; set; }
-
-        public IEnumerable<SelectListItem> Cities { get; set; }
+        public IEnumerable<SelectListItem>? Cities { get; set; }
 
         [Display(Name = "Dirección")]
         [MaxLength(200, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
@@ -54,7 +47,7 @@ namespace PruebaMilesCarRenta.Web.DTO
         public string YearOld { get; set; }
 
         [Display(Name = "Foto")]
-        public Guid ImageId { get; set; }
+        public Guid? ImageId { get; set; }
 
         [Display(Name = "Foto")]
         public string ImageFullPath => ImageId == Guid.Empty

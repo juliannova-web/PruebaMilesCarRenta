@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PruebaMilesCarRenta.Shared.Entities;
+using PruebaMilesCarRenta.Shared.Enum;
 using PruebaMilesCarRenta.Web.Data;
 using PruebaMilesCarRenta.Web.DTO;
 
@@ -74,10 +75,18 @@ namespace PruebaMilesCarRenta.Web.Helpers
         {
             User user = new User
             {
-                //Tipo_Identificacion = model.Tipo_Identificacion,
-                //Direccion = model.Direccion,
-                //Numero_Documento = model.Numero_Documento,
-                //Email = model.Username,
+                TypeDocument = model.TypeDocument,
+                NumberDocument = model.NumberDocument,
+                Name = model.Name,
+                Surname = model.Surname,
+                City = model.CityId,
+                Address = model.Address,
+                YearOld = model.YearOld,
+                ImageId = model.ImageId,
+                Phone = model.Phone,
+                TypeUser = TypeUser.User,
+                UserName = model.Username,
+                Email = model.Username
                 //Nombres = model.Nombres,
                 //Apellidos = model.Apellidos,
                 //Telefono = model.Telefono,

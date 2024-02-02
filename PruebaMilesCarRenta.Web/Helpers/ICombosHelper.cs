@@ -5,6 +5,7 @@ namespace PruebaMilesCarRenta.Web.Helpers
     public interface ICombosHelper
     {
         IEnumerable<SelectListItem> GetCombosTiposDocumento();
+        IEnumerable<SelectListItem> GetCombosCiudades();
 
     }
 }

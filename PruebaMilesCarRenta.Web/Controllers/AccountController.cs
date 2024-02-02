@@ -15,14 +15,13 @@ namespace PruebaMilesCarRenta.Web.Controllers
     {
         private readonly IUserHelper _userHelper;
         private readonly DataContext _context;
-        private readonly IMapper _mapper;
+       
         private readonly ICombosHelper _combosHelper;
 
-        public AccountController(IUserHelper userHelper, DataContext context, IMapper mapper, ICombosHelper combosHelper)
+        public AccountController(IUserHelper userHelper, DataContext context, ICombosHelper combosHelper)
         {
             _userHelper = userHelper;
             _context = context;
-            _mapper = mapper;
             _combosHelper = combosHelper;
         }
 
@@ -38,7 +37,7 @@ namespace PruebaMilesCarRenta.Web.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Account");
             }
 
             return View(new LoginDTO());
@@ -68,13 +67,14 @@ namespace PruebaMilesCarRenta.Web.Controllers
         }
 
 
-        [Authorize(Roles = "Admin")]
+      
         public async Task<IActionResult> Register()
         {
             UserDTO model = new UserDTO
             {
                 TypeUser = TypeUser.User,
                 TypesDocument = _combosHelper.GetCombosTiposDocumento(),
+                Cities = _combosHelper.GetCombosCiudades(),
             };
 
             return View(model);
@@ -93,6 +93,7 @@ namespace PruebaMilesCarRenta.Web.Controllers
                 {
                     ModelState.AddModelError(string.Empty, "Este correo ya está siendo usado.");
                     model.TypesDocument = _combosHelper.GetCombosTiposDocumento();
+                    model.Cities = _combosHelper.GetCombosCiudades();
                     return View(model);
                 }
 
@@ -101,6 +102,7 @@ namespace PruebaMilesCarRenta.Web.Controllers
             }
 
             model.TypesDocument = _combosHelper.GetCombosTiposDocumento();
+            model.Cities = _combosHelper.GetCombosCiudades();
             return View(model);
         }
 

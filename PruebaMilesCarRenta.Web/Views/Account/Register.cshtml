@@ -1,0 +1,129 @@
+﻿@model PruebaMilesCarRenta.Web.DTO.UserDTO
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="row">
+    <div class="col-md-10 offset-1">
+        <h1 style="font-size: calc(1rem + 1.5vw);">Registar Usuario</h1>
+        <hr />
+        <form asp-action="Register" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="TypeUser" />
+            <div class="row">
+                <div class="col-md-5 offset-1">
+                    <div class="form-group">
+                        <span class="required">*</span>
+                        <label asp-for="Name" class="col-form-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <span class="required">*</span>
+                        <label asp-for="TypeDocument" class="col-form-label"></label>
+                        <select asp-for="TypeDocument" asp-items="Model.TypesDocument" class="form-control"></select>
+                        <span asp-validation-for="TypeDocument" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="required">*</span>
+                        <label asp-for="CityId" class="col-form-label"></label>
+                        <select asp-for="CityId" asp-items="Model.Cities" class="form-control"></select>
+                        <span asp-validation-for="CityId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="required">*</span>
+                        <label asp-for="YearOld" class="col-form-label"></label>
+                        <input asp-for="YearOld" class="form-control" />
+                        <span asp-validation-for="YearOld" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="required">*</span>
+                        <label asp-for="Username" class="col-form-label"></label>
+                        <input asp-for="Username" class="form-control" />
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <span class="required">*</span>
+                        <label asp-for="Password" class="col-form-label"></label>
+                        <input asp-for="Password" type="password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="required">*</span>
+                        <label asp-for="PasswordConfirm" class="col-form-label"></label>
+                        <input asp-for="PasswordConfirm" type="password" class="form-control" />
+                        <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="col-md-5">
+
+                    <div class="form-group">
+                        <span class="required">*</span>
+                        <label asp-for="Surname" class="col-form-label"></label>
+                        <input asp-for="Surname" class="form-control" />
+                        <span asp-validation-for="Surname" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="required">*</span>
+                        <label asp-for="NumberDocument" class="col-form-label"></label>
+                        <input asp-for="NumberDocument" class="form-control" />
+                        <span asp-validation-for="NumberDocument" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="required">*</span>
+                        <label asp-for="Address" class="col-form-label"></label>
+                        <input asp-for="Address" class="form-control"  />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ImageFile" class="control-label"></label>
+                        <input asp-for="ImageFile" class="form-control" type="file" />
+                        <span asp-validation-for="ImageFile" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="required">*</span>
+                        <label asp-for="Phone" class="col-form-label"></label>
+                        <input asp-for="Phone" class="form-control" type="number" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+
+
+
+
+                </div>
+                <div class="form-group mt-2">
+
+                    <input type="submit" value="Registrar" class="btn btn-primary  col-md-2 offset-4" />
+                    <a class="btn btn-secondary col-md-2" asp-action="Index">Cancelar</a>
+
+
+
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+
+}
